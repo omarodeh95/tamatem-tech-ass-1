@@ -15,7 +15,7 @@ describe 'File Validation' do
     file = 'invalid123-42.txt'
     expect { validate_file(file) }.to raise_error(RuntimeError, "Invalid language 'invalid123'")
   end
-  
+
   it 'raises an error for a file with an invalid file number' do
     file = 'english-200.txt'
     expect { validate_file(file) }.to raise_error(RuntimeError, "Invalid file number '200'")
