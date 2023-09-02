@@ -32,7 +32,10 @@ describe 'File parser' do
     file = 'english-42.txt'
     language, number, extension = parse_file_name(file)
     expect(language).to be_a String
+    expect(language).to eq('english')
     expect(number).to be_a Integer
+    expect(number).to eq(42)
     expect(extension).to be_a String
+    expect(extension).to eq('txt')
   end
 end
