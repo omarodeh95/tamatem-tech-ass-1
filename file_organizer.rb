@@ -7,11 +7,16 @@ VALID_FILE_EXTENSIONS = ['txt'].freeze
 VALID_LANGUAGE_PATTERNS = [/^[a-zA-Z]+$/].freeze
 IGNORED_ENTRIES = ['.', '..'].freeze
 
-def validate_file(file)
+def parse_file_name(file)
   name, extension = file.split('.')
+  language, number = name.split('-')
+  return language, number, extension
+end
+
+def validate_file(file)
+  language, number, extension = parse_file_name(file)
   raise "Invalid file extension '#{extension}'" unless extension == 'txt'
   
-  language, number = name.split('-')
   raise "Invalid language '#{language}'" unless VALID_LANGUAGE_PATTERNS.any? { |pattern| language.match? pattern}
 
   raise "Invalid file number '#{number}'" unless VALID_FILE_NUMBER_RANGE.include? number.to_i
