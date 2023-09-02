@@ -10,7 +10,7 @@ IGNORED_ENTRIES = ['.', '..'].freeze
 def parse_file_name(file)
   name, extension = file.split('.')
   language, number = name.split('-')
-  return language, number, extension
+  return language, number.to_i, extension
 end
 
 def validate_file(file)

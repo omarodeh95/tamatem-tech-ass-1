@@ -20,4 +20,19 @@ describe 'File Validation' do
     file = 'english-200.txt'
     expect { validate_file(file) }.to raise_error(RuntimeError, "Invalid file number '200'")
   end
+
+  it 'returns true for a file with a valid format' do
+    file = 'english-100.txt'
+    expect(validate_file(file)).to be_truthy
+  end
+end
+
+describe 'File parser' do
+  it 'returns name, number and extension for a file' do
+    file = 'english-42.txt'
+    language, number, extension = parse_file_name(file)
+    expect(language).to be_a String
+    expect(number).to be_a Integer
+    expect(extension).to be_a String
+  end
 end
