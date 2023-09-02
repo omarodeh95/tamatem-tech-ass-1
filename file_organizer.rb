@@ -28,7 +28,6 @@ Dir.entries(FILES_FOLDER_PATH)
    .each do |file|
   begin
     validate_file(file)
-    puts "file is good"
   rescue => e
     puts "Warning: #{e} for #{file}"
     next
