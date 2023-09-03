@@ -16,23 +16,23 @@ The program can be executed from the operating system command line. It takes the
 ## Before Running the Program
 The folder structure before running the program typically looks like this:
 
-> arabic-1.txt
-> arabic-2.txt
-> english-1.txt
-> english-2.txt
+- arabic-1.txt
+- arabic-2.txt
+- english-1.txt
+- english-2.txt
 
 
 ## Expected Output
 After running the program, the folder structure will be organized as follows:
 
-> arabic
->> arabic-1.txt
->> arabic-2.txt
-> ...
-> english
->> english-1.txt
->> english-2.txt
-> ...
+- arabic
+	- arabic-1.txt
+	- arabic-2.txt
+	- ...
+- english
+	- english-1.txt
+	- english-2.txt
+	- ...
 
 
 ## How to Run the Program
